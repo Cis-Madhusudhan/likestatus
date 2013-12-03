@@ -1,4 +1,28 @@
-%h3 Home
-- @users.each do |user|
-  %p
-    User: #{link_to user.name, user}
+- if user_signed_in?
+	- user_id = current_user.id
+	.user-info
+		%h3
+			Dashboard
+	.update-status
+		= simple_form_for @user_status, :url => status_update_path do |f|
+			= f.input :status, label: 'Post Your Status:'
+			= f.input :user_id, :as => :hidden
+			= f.button :submit, 'Update', :class => 'btn-primary'
+	.users-status
+		- UserStatus.order('created_at Desc').each do |userstatus|
+			%p
+				User: #{link_to userstatus.user.name, userstatus.user} #{userstatus.user.id}
+			%p
+				Status : 
+				= userstatus.status
+			- if userstatus.check_user_status(current_user).present?
+				%span.unlike-button
+					= link_to "<i class='icon-thumbs-down'><p class='status-like-but'>Unlike</p></i>".html_safe, unlike_status_path(userstatus)
+			- else	
+				%span.like-button
+					= link_to "<i class='icon-thumbs-up'><p class='status-like-but'>Like</p></i>".html_safe, status_like_path(userstatus.id)
+			%br
+			.status-time
+				= time_ago_in_words(userstatus.created_at)
+				Ago
+			%br

@@ -1,0 +1,23 @@
+%h1
+	Welcome 
+	= @user.name
+.row-fluid.show-grid
+	.span9
+		.row-fluid.show-grid
+			- @products.first(3).each do |product|
+				.span3.product-bg
+					= link_to product.name, product_path(product.id), :class=> "product-link"
+					.asdf
+						= link_to "<i class = 'icon-plus'></i>".html_safe, product_collection_path(product.id)
+						= link_to "<i class = 'icon-star'></i>".html_safe
+						= link_to "<i class = 'icon-add-to-list', style='background-position:inherit;'></i>".html_safe
+
+
+/ <ul class="nav span12">
+/   <li class="active span3">
+/     <a href="#">Home</a>
+/   </li>
+/   <li class="span3"><a href="#">Link</a></li>
+/   <li class="span3"><a href="#">Link</a></li>
+/   <li class="span3"><a href="#">Link</a></li>
+/ </ul>		

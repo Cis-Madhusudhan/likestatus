@@ -1,3 +1,27 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.update-status {
+    float: right;
+    margin-right: 80px;
+    margin-top: -20px;
+}
+.user-info {
+    font-family: caption;
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 150px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.status-time {
+    color: #0088A9;
+}
+.users-status {
+    margin-left: 50px;
+}
+.status-like-but {
+    font-family: Verdana;
+    padding-left: 15px;
+}

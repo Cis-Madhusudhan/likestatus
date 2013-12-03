@@ -1,0 +1,26 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+a.version:hover { 
+  background-color: #cccccc !important; 
+  text-decoration: none; 
+}
+.product-bg{
+	background-color: #4480AA;
+}
+.show-grid .show-grid {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+.show-grid [class*="span"] {
+    border-radius: 3px 3px 3px 3px;
+    line-height: 40px;
+    min-height: 40px;
+    text-align: center;
+}
+.icon-plus, .icon-star, .icon-add-to-list{
+	padding-left: 10px;
+	margin-left: 20px;
+}
